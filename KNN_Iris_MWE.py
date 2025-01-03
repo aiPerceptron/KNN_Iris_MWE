@@ -11,6 +11,12 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 # step one: data
 iris = load_iris(return_X_y=True, as_frame=True)
+# irisSeries = pd.Series(iris)
+# irisNpArray = np.array(irisSeries)
+
+# for key in iris:
+#    print(key)
+# print(type(iris["frame"]))
 
 X = np.array(iris[0])
 y = np.array(iris[1])
@@ -39,5 +45,14 @@ petal_length = X[:, 2]
 petal_width = X[:, 3]
 
 plt.scatter(sepal_length, sepal_width, c=y, s=15)
+plt.title("Sepals")
+plt.xlabel("Sepal Length (cm)")
+plt.ylabel("Sepal Width (cm)")
+plt.savefig("IrisKNN_SKlearn_Sepals.png")
 plt.figure()
 plt.scatter(petal_length, petal_width, c=y, s=15)
+plt.title("Petals")
+plt.xlabel("Petal Length (cm)")
+plt.ylabel("Petal Width (cm)")
+plt.savefig("IrisKNN_SKlearn_Petals.png")
+# print(pd.Series(iris))
